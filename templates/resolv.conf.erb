@@ -1,0 +1,22 @@
+#############################################################################
+##h#a#n#d#s#o#f#f# This file is being maintained by Puppet #h#a#n#d#s#o#f#f##
+#############################################################################
+<% if @nameservers and ! @nameservers.empty? and @nameservers[0] != 'UNSET' -%>
+<%- Array(@nameservers).each do |nameserver| -%>
+<%- if @nameserver != '' -%>
+nameserver <%= @nameserver %>
+<%- end -%>
+<%- end -%>
+<%- end -%>
+<% if @search and ! @search.empty? and @search[0] != 'UNSET' -%>
+search<%- Array(@search).each do |search_domain| -%><%- if search_domain != '' -%> <%= search_domain %><%- end -%><%- end %>
+<%- end -%>
+<% if @sortlist and ! @sortlist.empty? and @sortlist[0] != 'UNSET' -%>
+sortlist<%- Array(@sortlist).each do |sortlist_address| -%><%- if sortlist_address != '' -%> <%= sortlist_address %><%- end -%><%- end %>
+<%- end -%>
+<% if @domain and @domain != 'UNSET' -%>
+domain <%= @domain %>
+<%- end -%>
+<% if @options and ! @options.empty? and @options[0] != 'UNSET' -%>
+options<%- Array(@options).each do |option| -%><%- if option != '' -%> <%= option %><%- end -%><%- end %>
+<%- end -%>

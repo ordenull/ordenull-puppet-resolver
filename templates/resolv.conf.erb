@@ -3,8 +3,8 @@
 #############################################################################
 <% if @nameservers and ! @nameservers.empty? and @nameservers[0] != 'UNSET' -%>
 <%- Array(@nameservers).each do |nameserver| -%>
-<%- if @nameserver != '' -%>
-nameserver <%= @nameserver %>
+<%- if nameserver != '' -%>
+nameserver <%= nameserver %>
 <%- end -%>
 <%- end -%>
 <%- end -%>
